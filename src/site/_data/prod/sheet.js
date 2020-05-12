@@ -28,6 +28,7 @@ module.exports = () => {
             "quando": item.gsx$quandohaifattoquestosogno.$t,
             "sogno": item["gsx$scriviiltuosogno..."].$t,
             "titolo":  item.gsx$vuoidareuntitoloaquestosogno.$t,
+            "dove": item.gsx$luogo.$t,
             "tag": item.gsx$sceglitag.$t,
             "immagine": item.gsx$scegliunimmagine.$t,
             // "header": item.gsx$header.$t,

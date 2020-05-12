@@ -40,7 +40,7 @@ eleventyNavigation:
         {% for dream in collections.dreams %}
           
           <a data-w-id="210411e0-cefa-950d-afb3-1e810d60c404" href="{{ dream.url | url }}" class="w-inline-block">
-            <h5 class="hero-overline italian-version">{{ dream.data.item.quando }}</h5>
+            <h5 class="hero-overline italian-version">{{ dream.data.item.quando }} {% if dream.data.item.dove %} - {{ dream.data.item.dove }} {% endif %}</h5>
             <h2>{{ dream.data.item.titolo }}</h2>
             <p style="-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="hero-paragraph">
               by <em>{{ dream.data.item.nickname }}</em><br>

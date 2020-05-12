@@ -6,14 +6,19 @@ pagination:
     addAllPagesToCollections: true
 permalink: "dreams/{{ item.titolo | slug | url  }}/"
 tags: dreams
-title: {{ item.titolo }}
-eleventyNavigation:
-  key: dreams
-  parent: home
-  order: 2
-  title: {{ item.titolo }}
 layout: default
 ---
+<title>{{ item.titolo  }} - QuarantineDreams</title>
+</head>
+  <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
+
+{# {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }} #}
+
+{# {% set navPages = collections.all | eleventyNavigationBreadcrumb("dreams") %}
+{{ navPages | dump | safe }} #}
+
+{# {{ collections.all | eleventyNavigationBreadcrumb("dreams") | eleventyNavigationToHtml | safe }} #}
+
 
 {# <ul>
     {% for item in pagination.items -%}
@@ -64,7 +69,11 @@ layout: default
         <p style="-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="hero-paragraph">Un diario onirico collettivo, in quarantena.<br>A collective dream diary from quarantine.<br></p>
       </div> #}
       <div class="container-flex">
-            <h5 class="hero-overline italian-version">{{ item.quando }}</h5>
+            <h5 class="hero-overline italian-version">{{ item.quando }} 
+            {% if item.dove %}
+              - {{ item.dove }}
+            {% endif %}
+            </h5>
             <h2>{{ item.titolo }}</h2>
             <p style="-webkit-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 15PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="hero-paragraph">
               {{ item.sogno }}

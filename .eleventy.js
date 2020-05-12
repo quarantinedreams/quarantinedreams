@@ -3,7 +3,6 @@ const pluginBetterSlug = require("@borisschapira/eleventy-plugin-better-slug");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(config) {
-
   // A useful way to reference the context we are runing eleventy in
   let env = process.env.ELEVENTY_ENV;
 
