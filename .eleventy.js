@@ -17,10 +17,15 @@ module.exports = function(config) {
   config.addFilter("cssmin", require("./src/utils/minify-css.js"))
 
   // Copies static files to output.
+  config.addPassthroughCopy('css');
+  config.addPassthroughCopy('fonts');
   config.addPassthroughCopy('images');
   config.addPassthroughCopy('js');
 
+  //plugin for better slug strip characters
   config.addPlugin(pluginBetterSlug);
+  
+  //plugin for better navigation in pagination
   config.addPlugin(eleventyNavigationPlugin);
 
   // make the seed target act like prod
