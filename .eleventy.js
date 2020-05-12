@@ -13,6 +13,9 @@ module.exports = function(config) {
   // use a filter for simple css minification
   config.addFilter("cssmin", require("./src/utils/minify-css.js"))
 
+  // Copies static files to output.
+  config.addPassthroughCopy('images');
+  config.addPassthroughCopy('js');
 
   // make the seed target act like prod
   env = (env=="seed") ? "prod" : env;
