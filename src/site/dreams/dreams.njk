@@ -4,7 +4,7 @@ pagination:
     size: 1
     alias: item
     addAllPagesToCollections: true
-permalink: "dreams/{{ item.titolo | slug }}/"
+permalink: "dreams/{{ item.titolo | slug | url  }}/"
 tags: dreams
 title: {{ item.titolo }}
 eleventyNavigation:

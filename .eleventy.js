@@ -1,4 +1,7 @@
 
+const pluginBetterSlug = require("@borisschapira/eleventy-plugin-better-slug");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+
 module.exports = function(config) {
 
   // A useful way to reference the context we are runing eleventy in
@@ -16,6 +19,9 @@ module.exports = function(config) {
   // Copies static files to output.
   config.addPassthroughCopy('images');
   config.addPassthroughCopy('js');
+
+  config.addPlugin(pluginBetterSlug);
+  config.addPlugin(eleventyNavigationPlugin);
 
   // make the seed target act like prod
   env = (env=="seed") ? "prod" : env;
